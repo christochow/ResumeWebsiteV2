@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+#Header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#Header li {
+  float: left;
+}
+
+#Header li a {
+  float: left;
+  display: block;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#Header li a.active {
+  color: white;
+}
+
+.cover {
+  position: absolute;
+  top: 1px;
+  width: 50px;
+  height: 50px;
+  color: transparent;
+  border: 2px solid red;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body {
+  margin: 0;
+  background: white;
+}
+
+a:link {
+  color: black;
+}
+a:visted{
+  color: grey;
+}
+
+.cover {
+  position: absolute;
+  top: 1px;
+  width: 50px;
+  height: 50px;
+  color: transparent;
+  border: 2px solid red;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+audio{
+  width: 500px;
+}
+
+#Header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+#Header li a:hover {
+  background-color: #111;
+}
+
+footer{
+  text-align: center;
+  height: 10px;
+  margin-bottom: 50px;
+}
+footer p{
+  padding-bottom: 10px;
+}
+
+header{
+//animation: rotate_reverse 30s infinite linear;
+  height: 100%;
+  background-size: auto;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  font-family: cursive;
+  color: white;
+  background-color: #008080;
+  text-align: center;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate_reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+#image{
+  animation: rotate 30s infinite linear;
+  padding: 120px;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+#empty{
+  color: white;
+}
+
+
