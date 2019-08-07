@@ -11,7 +11,7 @@
 <router-outlet></router-outlet>
 <footer>
   <h2>Let's Keep in Touch!!</h2>
-
+  <div *ngIf="isWeb" class="cover" [style.left]="xPos" [style.top]="yPos" ></div>
   <div>
     <p><a href="mailto:lok.chow@mail.utoronto.ca">lok.chow@mail.utoronto.ca</a></p>
     <a href="https://www.linkedin.com/in/lok-man-christopher-chow/" target="_blank">LinkedIn</a>
