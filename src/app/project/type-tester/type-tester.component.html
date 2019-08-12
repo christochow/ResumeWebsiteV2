@@ -8,16 +8,18 @@
   </div>
   <div class="test-area">
     <div id="origin-text">
-      <p>Noon. London: my flat. Ugh. The last thing on earth I feel physically, emotionally or mentaly equipped to do is drive to Una and Geoffrey Alconbury's New Year's Dat Turket Curry Buffet in Graftoon Underwood. Geoffery and Una Alconbury are my parents' best friends and, as Uncle Geoffrey never tires of reminding me, have known me since I was running the lawn with no clothes on. My mother rang up at 8.30 in the morning last August Bank Holidat and forced me to promise to go. She approached it via a cunningly circuitous route.</p>
+      <p>{{content}}</p>
     </div>
     <div class="test-wrapper">
-      <textarea id="test-area" name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
+      <textarea
+        id="test-area"  [ngModel]="input" (ngModelChange)="onChange($event)"
+        name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
     </div>
     <div class="meta">
       <div id="clock">
-        <div class="timer">00:00:00</div>
+        <div class="timer">{{timeString}}</div>
       </div>
-      <button id="reset">Start over</button>
+      <button id="reset" (click)="restart()">Start over</button>
     </div>
     <div id="speed_count"><p></p></div>
   </div>
