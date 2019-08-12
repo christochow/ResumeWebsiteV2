@@ -9,10 +9,13 @@ export class TypeTesterComponent{
   content: string;
   input: string;
   timeString: string;
+  areaColor: string;
+  wrapperColor: string;
   started: boolean;
   time: number;
   interval;
   constructor() {
+    this.wrapperColor = 'grey';
     this.started = false;
     this.timeString = '00:00:00';
     this.time = 0;
@@ -56,11 +59,15 @@ export class TypeTesterComponent{
     this.endTimer();
     this.resetInput();
     this.started = false;
+    this.wrapperColor = 'grey';
   }
 
   checkInput(){
     if(this.input === this.content){
+      this.wrapperColor = '#429890';
       this.endTimer();
+    } else {
+      this.wrapperColor = '#E95D0F';
     }
   }
 

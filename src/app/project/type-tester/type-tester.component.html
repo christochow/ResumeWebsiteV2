@@ -10,7 +10,7 @@
     <div id="origin-text">
       <p>{{content}}</p>
     </div>
-    <div class="test-wrapper">
+    <div class="test-wrapper" [style.borderColor]="wrapperColor">
       <textarea
         id="test-area"  [ngModel]="input" (ngModelChange)="onChange($event)"
         name="textarea" rows="6" placeholder="The clock starts when you start typing."></textarea>
