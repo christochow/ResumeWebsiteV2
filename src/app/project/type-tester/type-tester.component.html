@@ -21,6 +21,6 @@
       </div>
       <button id="reset" (click)="restart()">Start over</button>
     </div>
-    <div id="speed_count"><p></p></div>
+    <div *ngIf="finished"><p>{{endTime}}</p></div>
   </div>
 </main>

@@ -9,14 +9,16 @@ export class TypeTesterComponent{
   content: string;
   input: string;
   timeString: string;
-  areaColor: string;
+  endTime: string;
   wrapperColor: string;
   started: boolean;
+  finished: boolean;
   time: number;
   interval;
   constructor() {
     this.wrapperColor = 'grey';
     this.started = false;
+    this.finished = false;
     this.timeString = '00:00:00';
     this.time = 0;
     this.input = '';
@@ -59,13 +61,17 @@ export class TypeTesterComponent{
     this.endTimer();
     this.resetInput();
     this.started = false;
+    this.finished = false;
     this.wrapperColor = 'grey';
+    this.endTime = '';
   }
 
   checkInput(){
-    if(this.input === this.content){
+    if (this.input === this.content){
       this.wrapperColor = '#429890';
+      this.calcTime();
       this.endTimer();
+      this.finished = true;
     } else {
       this.wrapperColor = '#E95D0F';
     }
@@ -80,6 +86,12 @@ export class TypeTesterComponent{
       return '0' + s;
     }
     return s;
+  }
+
+  calcTime(){
+    if(this.time > 0){
+      this.endTime = (this.content.split( ' ').length / ((this.time / 1000) / 60)).toString();
+    }
   }
 
 }
