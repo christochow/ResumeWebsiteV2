@@ -10,6 +10,7 @@
     <div id="origin-text">
       <p>{{content}}</p>
     </div>
+    <div *ngIf="finished"><h4>Typing speed: {{endTime}} words per minute</h4></div>
     <div class="test-wrapper" [style.borderColor]="wrapperColor">
       <textarea
         id="test-area"  [ngModel]="input" (ngModelChange)="onChange($event)"
@@ -21,6 +22,5 @@
       </div>
       <button id="reset" (click)="restart()">Start over</button>
     </div>
-    <div *ngIf="finished"><p>{{endTime}}</p></div>
   </div>
 </main>

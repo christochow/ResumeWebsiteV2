@@ -90,7 +90,7 @@ export class TypeTesterComponent{
 
   calcTime(){
     if(this.time > 0){
-      this.endTime = (this.content.split( ' ').length / ((this.time / 1000) / 60)).toString();
+      this.endTime = (this.content.split( ' ').length / ((this.time / 1000) / 60)).toFixed(2).toString();
     }
   }
 
