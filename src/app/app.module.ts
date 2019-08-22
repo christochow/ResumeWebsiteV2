@@ -3,9 +3,11 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeModule} from "./home/home.module";
-import {ProjectModule} from "./project/project.module";
-import { TypeTesterComponent } from './project/type-tester/type-tester.component';
+import {HomeModule} from './home/home.module';
+import {ProjectModule} from './project/project.module';
+import { environment } from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { TypeTesterComponent } from './project/type-tester/type-tester.component
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     HomeModule,
     ProjectModule
   ],

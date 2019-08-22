@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FirebaseService} from './firebase-service.service';
 
 @Component({
   selector: 'app-type-tester',
   templateUrl: './type-tester.component.html',
   styleUrls: ['./type-tester.component.css']
 })
-export class TypeTesterComponent{
+export class TypeTesterComponent {
+  dbService: FirebaseService;
   content: string;
   input: string;
   timeString: string;
@@ -15,7 +17,9 @@ export class TypeTesterComponent{
   finished: boolean;
   time: number;
   interval;
-  constructor() {
+
+  constructor(dbService: FirebaseService) {
+    this.dbService = dbService;
     this.wrapperColor = 'grey';
     this.started = false;
     this.finished = false;
@@ -31,7 +35,7 @@ export class TypeTesterComponent{
   }
 
   onChange(val) {
-    if(!this.started && val !== ''){
+    if (!this.started && val !== '') {
       this.startTimer();
     }
     this.input = val;
@@ -41,11 +45,11 @@ export class TypeTesterComponent{
   startTimer() {
     this.interval = setInterval(() => {
       this.time += 10;
-      let minute = Math.floor(this.time/(1000*60));
+      let minute = Math.floor(this.time / (1000 * 60));
       minute = this.addZero(minute);
-      let seconds = Math.floor((this.time-minute*60*1000)/1000);
+      let seconds = Math.floor((this.time - minute * 60 * 1000) / 1000);
       seconds = this.addZero(seconds);
-      let milSec = Math.floor((this.time-seconds*1000-minute*60*1000)/10);
+      let milSec = Math.floor((this.time - seconds * 1000 - minute * 60 * 1000) / 10);
       milSec = this.addZero(milSec);
       this.timeString = minute + ':' + seconds + ':' + milSec;
     }, 10);
@@ -56,7 +60,7 @@ export class TypeTesterComponent{
     clearInterval(this.interval);
   }
 
-  restart(){
+  restart() {
     this.timeString = '00:00:00';
     this.endTimer();
     this.resetInput();
@@ -66,8 +70,8 @@ export class TypeTesterComponent{
     this.endTime = '';
   }
 
-  checkInput(){
-    if (this.input === this.content){
+  checkInput() {
+    if (this.input === this.content) {
       this.wrapperColor = '#429890';
       this.calcTime();
       this.endTimer();
@@ -77,20 +81,22 @@ export class TypeTesterComponent{
     }
   }
 
-  resetInput(){
+  resetInput() {
     this.input = '';
   }
 
-  addZero(s){
-    if(s < 10){
+  addZero(s) {
+    if (s < 10) {
       return '0' + s;
     }
     return s;
   }
 
-  calcTime(){
-    if(this.time > 0){
-      this.endTime = (this.content.split( ' ').length / ((this.time / 1000) / 60)).toFixed(2).toString();
+  calcTime() {
+    if (this.time > 0) {
+      const endTimeInt = parseInt((this.content.split(' ').length / ((this.time / 1000) / 60)).toFixed(2), 10);
+      this.endTime = endTimeInt.toString();
+      this.dbService.addResult({result: endTimeInt});
     }
   }
 

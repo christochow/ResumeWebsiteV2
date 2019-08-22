@@ -4,7 +4,13 @@
   </article>
   <div id="leaderboard">
     <h3>Leaderboard</h3>
-    <div id="temp"></div>
+    <div *ngIf="dbService.results.length > 0">
+      <ol class="leader-list">
+        <li *ngFor="let result of dbService.results">
+          {{result.result}} words per minute
+        </li>
+      </ol>
+    </div>
   </div>
   <div class="test-area">
     <div id="origin-text">

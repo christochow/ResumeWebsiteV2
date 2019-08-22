@@ -95,3 +95,7 @@
   text-align: left;
   display: inline-block;
 }
+
+.leader-list {
+  display: inline-block;
+}
