@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title:String;
+  title:string;
   constructor() {
-    this.title = "Welcome to my website";
+    this.title = 'Welcome to my website';
   }
 
   ngOnInit() {

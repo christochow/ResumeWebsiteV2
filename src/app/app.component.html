@@ -3,13 +3,12 @@
   <ul id=Header>
     <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
     <li><a routerLink="/projects" routerLinkActive="active">Side projects</a></li>
-    <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a></li>
   </ul>
-  <img *ngIf="nav.visible" width="1000" alt="Angular Logo" src="../assets/toronto.jpg">
   <h1 *ngIf="!nav.visible && isType"><strong>Typing test</strong></h1>
 </header>
 <router-outlet></router-outlet>
-<footer>
+<footer *ngIf="!nav.visible">
   <h2>Let's Keep in Touch!!</h2>
   <div *ngIf="isWeb" class="cover" [style.left]="xPos" [style.top]="yPos" ></div>
   <div>

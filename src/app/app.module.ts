@@ -8,10 +8,12 @@ import {ProjectModule} from './project/project.module';
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

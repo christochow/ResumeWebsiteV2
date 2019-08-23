@@ -119,10 +119,14 @@ header{
   animation: rotate 30s infinite linear;
   padding: 120px;
   padding-top: 50px;
-  padding-bottom: 150px;
 }
 #empty{
   color: white;
+}
+
+img {
+  margin: 0;
+  padding: 0;
 }
 
 
