@@ -19,7 +19,10 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create with title', () => {
     expect(component).toBeTruthy();
+    expect(component.title).toBe('Welcome to my website');
+
+    expect(fixture.nativeElement.querySelector('h1').textContent).toContain('Welcome to my website!');
   });
 });

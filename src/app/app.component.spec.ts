@@ -28,8 +28,10 @@ describe('AppComponent', () => {
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    fixture.componentInstance.isWeb = false;
+    fixture.componentInstance.nav.visible = false;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to resume-websiteV2!');
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.cover')).toBeNull();
   });
 });
