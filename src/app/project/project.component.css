@@ -2,16 +2,22 @@ section {
   margin: 20px;
   text-align: center;
   width: 500px;
-  height: 100px;
+  height: 200px;
   border-radius: 2px;
   overflow: auto;
   box-shadow: 0 19px 20px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.12);
 }
 
-.title {
+.h3 {
   text-decoration: underline;
+}
+
+a{
+  color: black;
 }
 
 .box {
   align-items: center;
 }
+
+
