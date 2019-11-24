@@ -1,14 +1,17 @@
-section{
+section {
   margin: 20px;
   text-align: center;
-  display: inline-block;
   width: 500px;
-  height: auto;
-  min-height: 50px;
+  height: 100px;
   border-radius: 2px;
-  box-shadow: 0 19px 20px rgba(0,0,0,0.01), 0 15px 12px rgba(0,0,0,0.12);
+  overflow: auto;
+  box-shadow: 0 19px 20px rgba(0, 0, 0, 0.01), 0 15px 12px rgba(0, 0, 0, 0.12);
 }
 
-.box{
+.title {
+  text-decoration: underline;
+}
+
+.box {
   align-items: center;
 }
